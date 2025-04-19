@@ -1,0 +1,38 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.111.0"
+  HUGO_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "hugo --gc --minify"
+
+[context.production.environment]
+  HUGO_VERSION = "0.125.7"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[build.processing.dns]
+  # A Records
+  [[build.processing.dns.a]]
+    name = "@"
+    ttl = 600  # Lower TTL for faster propagation
+    values = ["75.2.60.5"]
+  [[build.processing.dns.a]]
+    name = "@"
+    ttl = 600
+    values = ["99.83.190.102"]  # Correct Netlify IP
+
+  # CNAME Records
+  [[build.processing.dns.cname]]
+    name = "www"
+    ttl = 600
+    value = "calm-capybara-449aa9.netlify.app"  # Your Netlify app name

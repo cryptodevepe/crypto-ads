@@ -1,6 +1,7 @@
 baseURL: 'https://cryptodev.top'
 title: 'Crypto Earnings'
 theme: stack
+enableRobotsTXT: true
 params:
   mainSections: ['posts']
   sidebar:
@@ -9,6 +10,8 @@ params:
     left:
       - type: custom
         name: "a-ads-sidebar"
+  env: production
+  canonifyURLs: true
 menu:
   main:
     - name: Home
