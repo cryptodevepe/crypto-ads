@@ -1,0 +1,20 @@
+baseURL: 'https://cryptodev.top'
+title: 'Crypto Earnings'
+theme: stack
+params:
+  mainSections: ['posts']
+  sidebar:
+    subtitle: 'Learn crypto ad monetization'
+  widgets:
+    left:
+      - type: custom
+        name: "a-ads-sidebar"
+menu:
+  main:
+    - name: Home
+      url: /
+    - name: Posts
+      url: /posts/
+build:
+  publish: "public"
+  command: "hugo"
