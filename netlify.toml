@@ -13,8 +13,8 @@
 
 [[redirects]]
   from = "/test-ad"
-  to = "/test-ad/"
-  status = 301
+  to = "/test-ad/index.html"
+  status = 200
   force = true
 
 [[redirects]]

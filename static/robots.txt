@@ -1,0 +1,5 @@
+User-agent: AdsBot-Google
+Allow: /test-ad/
+
+User-agent: *
+Allow: /
