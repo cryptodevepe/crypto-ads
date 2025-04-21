@@ -1,6 +1,6 @@
 [build]
-  command = "hugo --gc --minify"
   publish = "public"
+  command = "hugo --gc --minify"
 
 [build.environment]
   HUGO_VERSION = "0.111.0"
@@ -10,6 +10,18 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/test-ad"
+  to = "/test-ad/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/test-ad/*"
+  to = "/test-ad/index.html"
+  status = 200
+  force = true
 
 [context.production]
   command = "hugo --gc --minify"
@@ -36,3 +48,15 @@
     name = "www"
     ttl = 600
     value = "calm-capybara-449aa9.netlify.app"  # Your Netlify app name
+
+[build.processing]
+  skip_processing = true
+
+[build.processing.html]
+  pretty_urls = false
+
+[headers]
+  for = "/test-ad/*"
+    [headers.values]
+    Cache-Control = "no-cache"
+    X-Robots-Tag = "noindex,follow"
