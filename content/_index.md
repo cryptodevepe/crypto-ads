@@ -1,5 +1,5 @@
 ---
-title: "Crypto Earnings Hub"
+title: "Crypto Earnings"
 description: "Learn how to monetize your website with crypto ads"
 ---
 

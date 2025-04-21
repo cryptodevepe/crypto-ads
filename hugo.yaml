@@ -1,6 +1,7 @@
 baseURL: 'https://cryptodev.top'
+languageCode: 'en'
 title: 'Crypto Earnings'
-theme: stack
+theme: 'stack'
 enableRobotsTXT: true
 params:
   mainSections: ['posts']
@@ -12,6 +13,17 @@ params:
         name: "a-ads-sidebar"
   env: production
   canonifyURLs: true
+  sidebar:
+    widgets:
+      - type: custom
+        params:
+          customWidget: a-ads-sidebar
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 menu:
   main:
     - name: Home
