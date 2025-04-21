@@ -55,8 +55,8 @@
 [build.processing.html]
   pretty_urls = false
 
-[headers]
+[[headers]]
   for = "/test-ad/*"
     [headers.values]
-    Cache-Control = "no-cache"
-    X-Robots-Tag = "noindex,follow"
+    Cache-Control = "no-store"
+    X-Robots-Tag = "all"
